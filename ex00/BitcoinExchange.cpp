@@ -185,9 +185,8 @@ void BitcoinExchange::processInput(const std::string& inputPath) const {
 
     std::string line;
     if (!std::getline(file, line))
-        return; // File is empty
+        return; 
 
-    // Check and skip the header
     std::string trimmedHeader = trim(line);
     if (trimmedHeader != "date | value")
         processLine(line);
