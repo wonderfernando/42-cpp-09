@@ -86,7 +86,7 @@ void BitcoinExchange::processLine(const std::string& line) const {
         std::cout << "Error: bad input => " << trim(line) << std::endl;
         return;
     }
-
+ 
     std::string date = trim(line.substr(0, pipePos));
     std::string valueStr = trim(line.substr(pipePos + 1));
 
@@ -114,7 +114,6 @@ void BitcoinExchange::processLine(const std::string& line) const {
         std::cout << "Error: database is empty." << std::endl;
         return;
     }
-
     // Find closest date <= query_date
     std::map<std::string, double>::const_iterator it = _database.upper_bound(date);
     if (it == _database.begin()) {
